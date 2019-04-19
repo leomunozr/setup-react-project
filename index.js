@@ -110,7 +110,7 @@ console.log('package.json');
 const scripts = {
   "start": "npx webpack-dev-server --open --mode development",
   "prestart": "npx webpack --mode development",
-  "build": "webpack --mode production"
+  "build": "npx webpack --mode production"
 };
 const packageJson = JSON.parse(
   fs.readFileSync('package.json', { encoding: 'utf8' })
