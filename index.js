@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+'use strict';
 const fs = require('fs');
 const EOL = require('os').EOL;
 const execSync = require('child_process').execSync;
