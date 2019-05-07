@@ -4,7 +4,7 @@ Install React and it's dependencies and create the needed configuration files fo
 
 ## Installation
 ```js
-npx setup-react-project
+npx @leomunozr/setup-react-project
 ```
 
 ## Usage 
