@@ -16,6 +16,8 @@ const devDependencies = [
   'babel-loader',
   'babel-plugin-transform-object-rest-spread',
   'css-loader',
+  'html-loader',
+  'html-webpack-plugin',
   'style-loader',
   'webpack',
   'webpack-cli',
@@ -48,7 +50,7 @@ console.log();
 
 console.log('.babelrc');
 let babelrc = {
-  presets: ['@babel/preset-env', '@babel/preset-react', 'new']
+  presets: ['@babel/preset-env', '@babel/preset-react']
 };
 if (fs.existsSync('.babelrc')) {
   console.log('File .babelrc already exists. Merging content...');
@@ -73,7 +75,18 @@ console.log();
 
 console.log('webpack');
 const webpack =
-`module.exports = {
+`const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
+
+module.exports = {
+  entry: './src/index.js',
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'public'),
+    publicPath: 'public',
+    sourceMapFilename: "bundle.map"
+  },
+  devtool: '#source-map',
   module: {
     rules: [
       {
@@ -94,7 +107,7 @@ const webpack =
     ]
   },
   plugins: [
-    new HtmlWebPackPlugin({
+    new HtmlWebpackPlugin({
       template: "./src/index.html",
       filename: "./index.html"
     })
