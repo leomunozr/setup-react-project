@@ -117,7 +117,7 @@ const packageJson = JSON.parse(
   fs.readFileSync('package.json', { encoding: 'utf8' })
 );
 if (packageJson.hasOwnProperty('scripts')) {
-  existingScripts = Object.keys(packageJson.scripts);
+  const existingScripts = Object.keys(packageJson.scripts);
   Object.keys(scripts).forEach(s =>
     existingScripts.includes(s) ?
       packageJson.scripts[`react-${s}`] = scripts[s] :
