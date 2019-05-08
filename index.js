@@ -18,6 +18,8 @@ const devDependencies = [
   'css-loader',
   'html-loader',
   'html-webpack-plugin',
+  'node-sass',
+  'sass-loader',
   'style-loader',
   'webpack',
   'webpack-cli',
@@ -103,6 +105,10 @@ module.exports = {
             loader: "html-loader"
           }
         ]
+      },
+      {
+        test: /\.(css|scss)$/,
+        use: ['style-loader', 'css-loader', 'sass-loader'],
       }
     ]
   },
