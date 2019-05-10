@@ -88,6 +88,11 @@ module.exports = {
     publicPath: 'public',
     sourceMapFilename: "bundle.map"
   },
+  devServer: {
+    contentBase: path.join(__dirname, 'public'),
+    compress: true,
+    port: 8080
+  },
   devtool: '#source-map',
   module: {
     rules: [
