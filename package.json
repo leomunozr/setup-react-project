@@ -1,6 +1,6 @@
 {
   "name": "@leomunozr/setup-react-project",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Script to add React library and dependencies to an existing project.",
   "main": "index.js",
   "repository": {
